@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angle Prime Circle - Edukasi Investasi Rasional & Aman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0F4C81;
+            --dark-blue: #0B3D69;
+            --mid-blue: #1565A7;
+            --light-blue: #E0F2FE;
+            --accent-gold: #C9943A;
+            --off-white: #F7F5F2;
+            --slate-deep: #1a2332;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--off-white);
+            color: var(--slate-deep);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            letter-spacing: -0.02em;
+        }
+
+        .section-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── HERO ── */
+        .hero-wrapper {
+            background-color: var(--slate-deep);
+            padding: 3.5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15,76,129,0.45) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            display: inline-block;
+            border: 1px solid rgba(201,148,58,0.35);
+            padding: 0.35rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .hero-headline {
+            font-size: clamp(2rem, 6vw, 3.15rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 1.4rem;
+        }
+        .hero-headline em {
+            font-style: italic;
+            color: #8FB8DA;
+        }
+        .hero-subhead {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
+            font-weight: 300;
+            max-width: 540px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .hero-subhead strong {
+            color: rgba(255,255,255,0.88);
+            font-weight: 500;
+        }
+
+        /* Mentor strip */
+        .mentor-strip {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            margin: 0 auto 2.5rem;
+            max-width: 460px;
+            justify-content: center;
+        }
+        .mentor-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--mid-blue), var(--primary-blue));
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            color: #fff;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+        .mentor-text {
+            text-align: left;
+        }
+        .mentor-text strong {
+            display: block;
+            font-size: 0.82rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        .mentor-text span {
+            font-size: 0.74rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .mentor-badge {
+            background: rgba(201,148,58,0.15);
+            border: 1px solid rgba(201,148,58,0.3);
+            color: var(--accent-gold);
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 0.22rem 0.6rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        /* Hero image area */
+        .hero-image-area {
+            position: relative;
+            margin-top: 2rem;
+            padding: 0 1.5rem;
+        }
+        .hero-image-area img {
+            width: 100%;
+            border-radius: 16px 16px 0 0;
+            display: block;
+            filter: brightness(0.88) saturate(0.85);
+        }
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0; left: 1.5rem; right: 1.5rem;
+            background: linear-gradient(to top, rgba(26,35,50,0.92) 30%, transparent);
+            border-radius: 0 0 0 0;
+            padding: 2rem 1.5rem 1.25rem;
+        }
+        .hero-image-caption {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.55);
+            font-style: italic;
+        }
+
+        /* ── CTA BUTTON ── */
+        .btn-cta {
+            background-color: var(--primary-blue);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 15px 32px;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(15,76,129,0.35);
+            width: 100%;
+            max-width: 400px;
+        }
+        .btn-cta:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(15,76,129,0.45);
+        }
+        .btn-cta-ghost {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.75) !important;
+        }
+        .btn-cta-ghost:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: #fff !important;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* ── ENEMY SECTION ── */
+        .enemy-section {
+            background: #fff;
+            padding: 3.5rem 0;
+        }
+        .enemy-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e53e3e;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .pain-item {
+            border-left: 3px solid #fee2e2;
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            background: #fffafa;
+            border-radius: 0 8px 8px 0;
+            transition: border-color 0.2s;
+        }
+        .pain-item:hover { border-left-color: #fc8181; }
+        .pain-item strong { color: #c53030; font-weight: 600; }
+        .pain-item p { color: #4a5568; font-size: 0.94rem; margin: 0; }
+
+        /* ── PROMISE SECTION ── */
+        .promise-section {
+            padding: 4rem 0;
+            background: var(--off-white);
+        }
+        .promise-section blockquote {
+            font-family: 'Lora', serif;
+            font-size: 1.45rem;
+            font-style: italic;
+            color: var(--primary-blue);
+            line-height: 1.5;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1.4rem;
+            margin: 0 0 1.5rem;
+        }
+
+        /* ── FAB CARDS ── */
+        .fab-section { padding: 3rem 0; }
+        .fab-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(226,232,240,0.7);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .fab-card:hover {
+            box-shadow: 0 6px 20px rgba(15,76,129,0.09);
+            transform: translateY(-2px);
+        }
+        .fab-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--light-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .fab-icon svg { width: 22px; height: 22px; color: var(--primary-blue); }
+        .fab-body h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--slate-deep);
+            margin: 0 0 0.25rem;
+            letter-spacing: 0;
+        }
+        .fab-body .fab-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .fab-body p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── OBJECTIONS SECTION ── */
+        .obj-section {
+            background: var(--slate-deep);
+            padding: 4rem 0;
+        }
+        .obj-item {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.5rem 0;
+        }
+        .obj-item:last-child { border-bottom: none; }
+        .obj-item h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            margin: 0 0 0.6rem;
+            letter-spacing: 0;
+        }
+        .obj-item p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .obj-item p strong { color: rgba(255,255,255,0.82); font-weight: 500; }
+        .obj-item p .red { color: #fc8181; }
+
+        /* ── TESTIMONIALS ── */
+        .testi-section { padding: 4rem 0; background: #fff; }
+        .testi-card {
+            background: var(--off-white);
+            border-radius: 14px;
+            padding: 1.6rem;
+            margin-bottom: 1.1rem;
+            border: 1px solid rgba(226,232,240,0.6);
+        }
+        .testi-card p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #374151;
+            font-size: 0.96rem;
+            margin: 0 0 1.1rem;
+            line-height: 1.7;
+        }
+        .testi-meta { display: flex; align-items: center; gap: 0.75rem; }
+        .testi-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.85rem; color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+        .testi-name { font-size: 0.83rem; font-weight: 600; color: var(--slate-deep); }
+        .testi-role { font-size: 0.75rem; color: #94a3b8; }
+
+        /* ── FAQ ── */
+        .faq-section { background: var(--light-blue); padding: 4rem 0; }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(226,232,240,0.7);
+            overflow: hidden;
+        }
+        .faq-btn {
+            width: 100%;
+            text-align: left;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--slate-deep);
+        }
+        .faq-btn svg { width: 18px; height: 18px; color: #94a3b8; flex-shrink: 0; transition: transform 0.3s; }
+        .faq-btn svg.open { transform: rotate(180deg); }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-content.active { max-height: 400px; }
+        .faq-content p {
+            padding: 0 1.25rem 1.1rem;
+            color: #64748b;
+            font-size: 0.88rem;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* ── PRICING ── */
+        .pricing-section { padding: 5rem 0; background: var(--off-white); }
+        .pricing-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 8px 40px rgba(15,76,129,0.12);
+            text-align: center;
+        }
+        .scarcity-badge {
+            display: inline-block;
+            background: #fff5e0;
+            border: 1px solid #f6c57f;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 1.75rem;
+        }
+        .price-old {
+            color: #94a3b8;
+            text-decoration: line-through;
+            font-size: 1rem;
+        }
+        .price-main {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin: 0.3rem 0;
+        }
+        .price-save {
+            font-size: 0.82rem;
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .trust-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .trust-item svg { width: 13px; height: 13px; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--slate-deep);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; margin: 0 0 0.4rem; }
+        footer p:last-child { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+        footer span.brand { color: rgba(255,255,255,0.55); font-weight: 600; }
+
+        /* ── DIVIDER ── */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(15,76,129,0.15), transparent);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════ -->
+    <header class="hero-wrapper">
+        <div class="section-container text-center">
+
+            <span class="hero-eyebrow">Angle Prime Circle</span>
+
+            <h1 class="hero-headline">
+                Pasar Saham Penuh Jebakan.<br>
+                <em>Jangan Jadi Mangsanya.</em>
+            </h1>
+
+            <p class="hero-subhead">
+                Investor pemula yang tidak terdidik selalu kalah — bukan karena bodoh, tapi karena <strong>tidak ada yang mengajari cara bertahan.</strong> Kelas ini mengubah itu.
+            </p>
+
+            <!-- Mentor Strip -->
+            <div class="mentor-strip">
+                <div class="mentor-avatar">A</div>
+                <div class="mentor-text">
+                    <strong>Dipandu oleh Mentor Berpengalaman</strong>
+                    <span>Mantan Head Edukator · Mirae Asset Sekuritas</span>
+                </div>
+                <div class="mentor-badge">Verified</div>
+            </div>
+
+            <a href="https://wa.me/6285710208628" class="btn-cta mb-3">
+                Saya Ingin Belajar Bertahan →
+            </a>
+            <p style="font-size:0.75rem; color:rgba(255,255,255,0.3); margin-top:0.6rem;">Akses langsung · Komunitas alumni · Bukan saran finansial</p>
+
+        </div>
+
+        <!-- Hero image -->
+        <div class="hero-image-area">
+            <img src="https://placehold.co/700x360/0B3D69/4A90C4?text=Sesi+Edukasi+Langsung" alt="Sesi edukasi Angle Prime Circle">
+            <div class="hero-image-overlay">
+                <p class="hero-image-caption">Suasana sesi diskusi nyata — bukan stock photo keuangan generik.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         PROBLEM / ENEMY SECTION
+    ══════════════════════════════════════════════ -->
+    <section class="enemy-section">
+        <div class="section-container">
+
+            <span class="enemy-label">Apakah Ini Situasi Anda?</span>
+            <h2 style="font-size:1.75rem; margin-bottom:1.5rem; line-height:1.25;">
+                Pasar Tidak Pernah Netral.<br>Ada yang Untung, Ada yang Jadi Korban.
+            </h2>
+
+            <div class="pain-item">
+                <p><strong>Anda takut kehilangan tabungan kerja keras.</strong> Media sosial penuh janji cuan dan screenshot profit palsu. Anda tidak tahu mana yang bisa dipercaya — dan itu membuat Anda lumpuh.</p>
+            </div>
+            <div class="pain-item">
+                <p><strong>Anda pernah ikut hype, dan menyesal.</strong> Beli karena TikTok, jual karena panik. Siklus ini terus berulang. Bukan karena Anda tidak cerdas — tapi karena tidak ada yang mengajari cara berpikir, bukan cara menebak.</p>
+            </div>
+            <div class="pain-item">
+                <p><strong>Jargon keuangan terasa seperti bahasa alien.</strong> PE Ratio, MACD, Support-Resistance — Anda mendengar kata-kata itu dan langsung merasa pasar "bukan untuk orang seperti saya."</p>
+            </div>
+            <div class="pain-item">
+                <p><strong>Anda tidak tahu siapa yang bisa dipercaya.</strong> Semua "mentor" online terlihat sama: flexing profit, screenshot portofolio, janji kaya 3 bulan. Anda sudah lelah dibohongi.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════
+         PROMISE / TRANSFORMATION
+    ══════════════════════════════════════════════ -->
+    <section class="promise-section">
+        <div class="section-container">
+
+            <blockquote>
+                "Kami tidak menjual cara cepat kaya. Kami mengajarkan cara tidak menjadi mangsa pasar."
+            </blockquote>
+
+            <p style="color:#4a5568; font-size:1rem; line-height:1.8; margin-bottom:1.25rem;">
+                <strong>Angle Prime Circle</strong> dirancang untuk satu orang: investor pemula yang ingin masuk pasar dengan <em>akal sehat</em>, bukan euforia. Anda tidak perlu menjadi trader agresif. Anda perlu menjadi orang yang tidak mudah diperdaya.
+            </p>
+            <p style="color:#4a5568; font-size:1rem; line-height:1.8;">
+                Ketika Anda memahami cara kerja pasar secara mendasar — membaca data, mengelola risiko, mengenali manipulasi — Anda berhenti berjudi dan mulai berinvestasi. Itu perbedaan yang mengubah segalanya.
+            </p>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════
+         FAB — WHAT YOU ACTUALLY LEARN
+    ══════════════════════════════════════════════ -->
+    <section class="fab-section" style="background: var(--off-white);">
+        <div class="section-container">
+
+            <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary-blue); display:block; margin-bottom:0.6rem;">Yang Anda Dapatkan</span>
+            <h2 style="font-size:1.65rem; margin-bottom:2rem; line-height:1.3;">Empat Hal yang Mengubah Cara Anda Melihat Pasar</h2>
+
+            <!-- FAB 1 -->
+            <div class="fab-card">
+                <div class="fab-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <div class="fab-body">
+                    <span class="fab-tag">Bahasa yang Manusiawi</span>
+                    <h3>Pasar Bisa Dipahami Siapa Saja</h3>
+                    <p>PE Ratio, MACD, Support-Resistance — semua dijelaskan dengan analogi kehidupan sehari-hari. Bukan karena Anda tidak mampu belajar hal kompleks, tapi karena kompleksitas yang tidak perlu adalah tanda pengajar yang buruk.</p>
+                </div>
+            </div>
+
+            <!-- FAB 2 -->
+            <div class="fab-card">
+                <div class="fab-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <div class="fab-body">
+                    <span class="fab-tag">Prioritas Utama</span>
+                    <h3>Lindungi Modal Dulu, Baru Bicara Profit</h3>
+                    <p>Sebagian besar investor rugi bukan karena strategi salah, tapi karena tidak punya batas risiko yang jelas. Anda akan belajar menetapkan batasan itu sebelum menyentuh satu pun saham.</p>
+                </div>
+            </div>
+
+            <!-- FAB 3 -->
+            <div class="fab-card">
+                <div class="fab-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                </div>
+                <div class="fab-body">
+                    <span class="fab-tag">Imunitas Mental</span>
+                    <h3>Berita Pasar Tidak Akan Mengendalikan Anda</h3>
+                    <p>Anda akan bisa membedakan mana berita yang hanya menciptakan kepanikan sesaat dan mana yang benar-benar berdampak. Ini tameng psikologis yang paling underrated di dunia investasi.</p>
+                </div>
+            </div>
+
+            <!-- FAB 4 -->
+            <div class="fab-card">
+                <div class="fab-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div class="fab-body">
+                    <span class="fab-tag">Ekosistem Pasca-Kelas</span>
+                    <h3>Anda Tidak Ditinggalkan Setelah Bayar</h3>
+                    <p>Akses ke komunitas alumni yang sehat — tempat Anda bisa menguji analisis, bertanya tanpa dihakimi, dan terus berkembang di luar kelas. Mentor tetap terlibat.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         OBJECTION HANDLING
+    ══════════════════════════════════════════════ -->
+    <section class="obj-section">
+        <div class="section-container">
+
+            <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-gold); display:block; margin-bottom:0.6rem;">Keberatan yang Wajar</span>
+            <h2 style="font-size:1.65rem; color:#fff; margin-bottom:2rem; line-height:1.3;">Hal-Hal yang Mungkin Anda Pertanyakan</h2>
+
+            <div class="obj-item">
+                <h3>Pengajarnya kompeten, atau cuma oknum flexing profit?</h3>
+                <p>Edukasi ini dipandu <strong>mantan Head Edukator Mirae Asset</strong> — sekuritas No. 3 di Indonesia. Standar pengajaran berbasis kepatuhan institusional, bukan rekayasa screenshot. Nama, rekam jejak, dan latar belakang dapat diverifikasi.</p>
+            </div>
+            <div class="obj-item">
+                <h3>Saya buta total soal saham. Akan terlalu rumit?</h3>
+                <p>Dirancang khusus untuk orang yang belum pernah menyentuh aplikasi saham. Setiap modul dimulai dari nol, dengan analogi kehidupan nyata — bukan dari asumsi bahwa Anda sudah tahu apa-apa.</p>
+            </div>
+            <div class="obj-item">
+                <h3>Modal saya kecil. Apakah saham hanya untuk orang kaya?</h3>
+                <p>Di bursa Indonesia Anda bisa mulai dari nominal yang sangat terjangkau. Fokus kelas ini bukan besarnya modal, tapi <strong>cara menjaga modal agar tidak habis karena keputusan yang tidak terinformasi.</strong></p>
+            </div>
+            <div class="obj-item">
+                <h3>Setelah kelas selesai, apakah saya dilepas begitu saja?</h3>
+                <p>Tidak. Anda mendapat akses ke ekosistem alumni dengan sesi simulasi dan ruang diskusi aktif. Mentor tetap hadir — bukan hilang setelah pembayaran diterima.</p>
+            </div>
+            <div class="obj-item">
+                <h3>Apakah ada jaminan saya pasti kaya?</h3>
+                <p><span class="red">Tidak ada, dan siapa pun yang menjanjikannya sedang membohongi Anda.</span> Yang kami janjikan: <strong>Anda akan paham cara kerja pasar, cara melindungi modal, dan cara berpikir mandiri</strong> — sehingga Anda tidak lagi menjadi mangsa siapa pun.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS
+    ══════════════════════════════════════════════ -->
+    <section class="testi-section">
+        <div class="section-container">
+
+            <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary-blue); display:block; margin-bottom:0.6rem;">Kata Alumni</span>
+            <h2 style="font-size:1.65rem; margin-bottom:2rem;">Mereka Juga Pernah di Posisi Anda</h2>
+
+            <div class="testi-card">
+                <p>"Awalnya uang saya simpan di bank saja karena takut scam. Angle Prime Circle mengubah mindset saya. Saya sekarang tahu cara membaca laporan keuangan dasar tanpa harus pusing sendiri."</p>
+                <div class="testi-meta">
+                    <div class="testi-avatar">B</div>
+                    <div>
+                        <div class="testi-name">Budi Santoso</div>
+                        <div class="testi-role">Pegawai BUMN</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card">
+                <p>"Saya pernah rugi parah ikut-ikutan crypto di TikTok. Kelas ini menyadarkan saya bahwa investasi itu soal data dan kesabaran, bukan FOMO. Materi manajemen risikonya sangat menyelamatkan portofolio saya."</p>
+                <div class="testi-meta">
+                    <div class="testi-avatar">S</div>
+                    <div>
+                        <div class="testi-name">Siti Aminah</div>
+                        <div class="testi-role">Wiraswasta</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card">
+                <p>"Penjelasannya sistematis dan pakai bahasa awam. Tidak ada momen 'saya satu-satunya yang tidak ngerti' di sini. Support group alumni-nya juga sangat aktif."</p>
+                <div class="testi-meta">
+                    <div class="testi-avatar">R</div>
+                    <div>
+                        <div class="testi-name">Rendra Wijaya</div>
+                        <div class="testi-role">Freelancer</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ
+    ══════════════════════════════════════════════ -->
+    <section class="faq-section">
+        <div class="section-container">
+
+            <h2 style="font-size:1.65rem; color:var(--primary-blue); margin-bottom:1.75rem; text-align:center;">Pertanyaan Umum</h2>
+
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>Berapa lama akses kelas berlaku?</span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-content">
+                    <p>Seumur hidup — baik materi kelas maupun akses ke grup diskusi alumni.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>Apakah cocok untuk pemula yang belum bisa membaca laporan keuangan?</span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-content">
+                    <p>Sangat cocok. Kami mengajarkan dari nol — cara menggunakan aplikasi saham hingga membaca laporan keuangan dasar, semuanya dengan bahasa yang tidak membuat Anda merasa tertinggal.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>Metode pembayaran apa yang tersedia?</span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-content">
+                    <p>Transfer Bank, E-Wallet, atau Kartu Kredit — semua dikonfirmasi melalui WhatsApp.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRICING / CONVERSION
+    ══════════════════════════════════════════════ -->
+    <section class="pricing-section">
+        <div class="section-container">
+
+            <div class="pricing-card">
+                <div class="scarcity-badge">⚠ Harga Akan Naik Segera</div>
+
+                <h2 style="font-size:1.6rem; color:var(--slate-deep); margin-bottom:0.4rem;">Satu Keputusan yang Melindungi Segalanya</h2>
+                <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1.75rem;">Investasi pada pemahaman yang tidak bisa diambil dari Anda.</p>
+
+                <p class="price-old">Rp 2.970.000</p>
+                <div class="price-main">Rp 997.000</div>
+                <p class="price-save">Hemat Rp 1.973.000 dari harga normal</p>
+
+                <a href="https://wa.me/6285710208628" class="btn-cta" style="font-size:1.05rem;">
+                    Daftar & Mulai Belajar Sekarang →
+                </a>
+
+                <div class="trust-strip">
+                    <span class="trust-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Pembayaran Aman
+                    </span>
+                    <span class="trust-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Edukasi Berbasis Regulasi
+                    </span>
+                    <span class="trust-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Komunitas Alumni Aktif
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════ -->
+    <footer>
+        <div class="section-container">
+            <p><span class="brand">Angle Prime Circle</span> &copy; 2026</p>
+            <p>Disclaimer: Semua investasi memiliki risiko. Kinerja masa lalu tidak mencerminkan hasil masa depan. Materi ini untuk tujuan edukasi, bukan saran finansial individual.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = content.classList.contains('active');
+
+            document.querySelectorAll('.faq-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.faq-btn svg').forEach(el => el.classList.remove('open'));
+
+            if (!isOpen) {
+                content.classList.add('active');
+                icon.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>
