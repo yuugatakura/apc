@@ -34,184 +34,62 @@
 
         .section-container { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* ── NAVBAR ── */
+        /* NAVBAR */
         .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 60;
-            background: rgba(15, 23, 42, 0.97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 60;
+            background: rgba(15,23,42,0.97);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
             box-shadow: 0 2px 16px rgba(0,0,0,0.3);
         }
         .navbar-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 62px;
+            max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; height: 62px;
         }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-        .navbar-brand-text {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.01em;
-        }
+        .navbar-brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+        .navbar-brand-text { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
         .navbar-brand-text span { color: var(--accent-gold); }
-        .navbar-brand-dot {
-            width: 7px; height: 7px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            flex-shrink: 0;
-            box-shadow: 0 0 6px rgba(201,148,58,0.5);
-        }
-
-        /* Desktop nav links */
-        .navbar-links {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            list-style: none;
-            margin: 0; padding: 0;
-        }
-        .navbar-links a {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            padding: 0.45rem 0.85rem;
-            border-radius: 6px;
-            transition: color 0.2s, background 0.2s;
-            white-space: nowrap;
-        }
-        .navbar-links a:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.07);
-        }
-        .navbar-links a.nav-cta {
-            background: var(--primary-blue);
-            color: #fff;
-            font-weight: 600;
-            padding: 0.45rem 1rem;
-            box-shadow: 0 2px 8px rgba(15,76,129,0.4);
-        }
-        .navbar-links a.nav-cta:hover {
-            background: var(--dark-blue);
-        }
-
-        /* Mobile hamburger */
-        .navbar-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.4rem;
-            color: rgba(255,255,255,0.7);
-            transition: color 0.2s;
-        }
+        .navbar-brand-dot { width: 7px; height: 7px; background: var(--accent-gold); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 6px rgba(201,148,58,0.5); }
+        .navbar-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
+        .navbar-links a { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+        .navbar-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+        .navbar-links a.nav-cta { background: var(--primary-blue); color: #fff; font-weight: 600; padding: 0.45rem 1rem; box-shadow: 0 2px 8px rgba(15,76,129,0.4); }
+        .navbar-links a.nav-cta:hover { background: var(--dark-blue); }
+        .navbar-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
         .navbar-toggle:hover { color: #fff; }
         .navbar-toggle svg { width: 24px; height: 24px; display: block; }
-
-        /* Mobile menu */
-        .navbar-mobile {
-            display: none;
-            flex-direction: column;
-            background: rgba(10,16,28,0.98);
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 0.75rem 1.5rem 1rem;
-            gap: 0.15rem;
-        }
+        .navbar-mobile { display: none; flex-direction: column; background: rgba(10,16,28,0.98); border-top: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 1.5rem 1rem; gap: 0.15rem; }
         .navbar-mobile.open { display: flex; }
-        .navbar-mobile a {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            padding: 0.7rem 0.75rem;
-            border-radius: 8px;
-            transition: color 0.2s, background 0.2s;
-        }
-        .navbar-mobile a:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.07);
-        }
-        .navbar-mobile a.nav-cta-mobile {
-            background: var(--primary-blue);
-            color: #fff;
-            font-weight: 600;
-            text-align: center;
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 767px) {
-            .navbar-links { display: none; }
-            .navbar-toggle { display: flex; }
-        }
+        .navbar-mobile a { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0.7rem 0.75rem; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+        .navbar-mobile a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+        .navbar-mobile a.nav-cta-mobile { background: var(--primary-blue); color: #fff; font-weight: 600; text-align: center; margin-top: 0.5rem; }
+        @media (max-width: 767px) { .navbar-links { display: none; } .navbar-toggle { display: flex; } }
 
         /* HERO */
         .hero-wrapper { background-color: var(--slate-deep); padding: 3.5rem 0 0; position: relative; overflow: hidden; }
-        .hero-wrapper::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15,76,129,0.45) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-eyebrow {
-            font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
-            letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-gold);
-            display: inline-block; border: 1px solid rgba(201,148,58,0.35);
-            padding: 0.35rem 0.9rem; border-radius: 2px; margin-bottom: 1.5rem;
-        }
+        .hero-wrapper::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15,76,129,0.45) 0%, transparent 70%); pointer-events: none; }
+        .hero-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-gold); display: inline-block; border: 1px solid rgba(201,148,58,0.35); padding: 0.35rem 0.9rem; border-radius: 2px; margin-bottom: 1.5rem; }
         .hero-headline { font-size: clamp(2rem, 6vw, 3.15rem); font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 1.4rem; }
         .hero-headline em { font-style: italic; color: #8FB8DA; }
         .hero-subhead { font-size: 1.05rem; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
         .hero-subhead strong { color: rgba(255,255,255,0.88); font-weight: 500; }
-        .mentor-strip {
-            display: flex; align-items: center; gap: 0.85rem;
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px; padding: 0.85rem 1.1rem; margin: 0 auto 2.5rem;
-            max-width: 480px; justify-content: center;
-        }
+        .mentor-strip { display: flex; align-items: center; gap: 0.85rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.85rem 1.1rem; margin: 0 auto 2.5rem; max-width: 480px; justify-content: center; }
         .mentor-avatar-hero { width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.2); }
         .mentor-avatar-hero img { width: 100%; height: 100%; object-fit: cover; }
         .mentor-text { text-align: left; }
         .mentor-text strong { display: block; font-size: 0.82rem; color: #fff; font-weight: 600; }
         .mentor-text span { font-size: 0.74rem; color: rgba(255,255,255,0.5); }
-        .mentor-badge {
-            background: rgba(201,148,58,0.15); border: 1px solid rgba(201,148,58,0.3);
-            color: var(--accent-gold); font-size: 0.68rem; font-weight: 600;
-            padding: 0.22rem 0.6rem; border-radius: 3px; text-transform: uppercase;
-            letter-spacing: 0.05em; margin-left: auto; flex-shrink: 0;
-        }
+        .mentor-badge { background: rgba(201,148,58,0.15); border: 1px solid rgba(201,148,58,0.3); color: var(--accent-gold); font-size: 0.68rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; margin-left: auto; flex-shrink: 0; }
         .hero-image-area { position: relative; margin-top: 2rem; padding: 0 1.5rem; }
         .hero-image-area img { width: 100%; border-radius: 16px 16px 0 0; display: block; filter: brightness(0.88) saturate(0.85); }
 
         /* CTA */
-        .btn-cta {
-            background-color: var(--primary-blue); color: #ffffff !important; text-decoration: none !important;
-            font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem;
-            border-radius: 8px; padding: 15px 32px; display: inline-block; text-align: center;
-            transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(15,76,129,0.35); width: 100%; max-width: 400px;
-        }
+        .btn-cta { background-color: var(--primary-blue); color: #ffffff !important; text-decoration: none !important; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem; border-radius: 8px; padding: 15px 32px; display: inline-block; text-align: center; transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(15,76,129,0.35); width: 100%; max-width: 400px; }
         .btn-cta:hover { background-color: var(--dark-blue); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(15,76,129,0.45); }
 
         /* MENTOR BIO */
         .mentor-bio-section { background: var(--slate-deep); padding: 4.5rem 0; position: relative; overflow: hidden; }
-        .mentor-bio-section::before {
-            content: ''; position: absolute; top: -80px; right: -80px; width: 360px; height: 360px;
-            border-radius: 50%; background: radial-gradient(circle, rgba(15,76,129,0.25) 0%, transparent 70%); pointer-events: none;
-        }
+        .mentor-bio-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(15,76,129,0.25) 0%, transparent 70%); pointer-events: none; }
         .mentor-photo-wrapper { position: relative; margin: 0 auto 2rem; width: 160px; height: 160px; }
         .mentor-photo-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid rgba(201,148,58,0.5); }
         .mentor-photo-ring { position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid rgba(201,148,58,0.2); }
@@ -239,10 +117,7 @@
 
         /* YOUTUBE */
         .youtube-section { background: var(--youtube-bg); padding: 4.5rem 0; position: relative; overflow: hidden; }
-        .youtube-section::before {
-            content: ''; position: absolute; top: -60px; left: -60px; width: 320px; height: 320px;
-            border-radius: 50%; background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%); pointer-events: none;
-        }
+        .youtube-section::before { content: ''; position: absolute; top: -60px; left: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%); pointer-events: none; }
         .yt-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4ade80; display: block; margin-bottom: 0.6rem; }
         .yt-embed-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 14px; overflow: hidden; margin-top: 1.75rem; box-shadow: 0 16px 48px rgba(0,0,0,0.5); border: 1px solid rgba(74,222,128,0.1); }
         .yt-embed-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -250,14 +125,8 @@
 
         /* MEMBERSHIP */
         .membership-section { background: #0F172A; padding: 5rem 0; position: relative; overflow: hidden; }
-        .membership-section::before {
-            content: ''; position: absolute; top: 0; left: 25%; width: 600px; height: 600px;
-            background: rgba(37,114,180,0.08); border-radius: 50%; filter: blur(100px); transform: translateY(-50%); pointer-events: none;
-        }
-        .membership-section::after {
-            content: ''; position: absolute; bottom: 0; right: 25%; width: 500px; height: 500px;
-            background: rgba(67,56,202,0.1); border-radius: 50%; filter: blur(100px); transform: translateY(25%); pointer-events: none;
-        }
+        .membership-section::before { content: ''; position: absolute; top: 0; left: 25%; width: 600px; height: 600px; background: rgba(37,114,180,0.08); border-radius: 50%; filter: blur(100px); transform: translateY(-50%); pointer-events: none; }
+        .membership-section::after { content: ''; position: absolute; bottom: 0; right: 25%; width: 500px; height: 500px; background: rgba(67,56,202,0.1); border-radius: 50%; filter: blur(100px); transform: translateY(25%); pointer-events: none; }
         .membership-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
         .membership-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
         .membership-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 1rem; border-radius: 999px; background: rgba(30,41,59,0.8); border: 1px solid rgba(71,85,105,0.6); font-size: 0.7rem; font-weight: 700; color: #cbd5e1; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.25rem; }
@@ -265,6 +134,32 @@
         .membership-header p { color: #64748b; font-size: 0.97rem; }
         .membership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
         @media (min-width: 900px) { .membership-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* Price anchoring pill */
+        .price-anchor {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.28rem 0.7rem;
+            border-radius: 20px;
+            margin-top: 0.45rem;
+            letter-spacing: 0.02em;
+        }
+        .price-anchor.blue {
+            background: rgba(37,114,180,0.18);
+            color: #93c5fd;
+            border: 1px solid rgba(37,114,180,0.3);
+        }
+        .price-anchor.blue-alt {
+            background: rgba(37,114,180,0.10);
+            color: #7bb3e8;
+            border: 1px solid rgba(37,114,180,0.2);
+        }
+        .price-anchor svg { width: 10px; height: 10px; flex-shrink: 0; }
+
         .mem-card { border-radius: 24px; padding: 1.75rem 1.5rem; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .mem-card:hover { transform: translateY(-6px); }
         .mem-card.reguler { background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 4px 24px rgba(0,0,0,0.06); color: var(--slate-deep); }
@@ -327,45 +222,25 @@
         .syarat-block ul { margin: 0; padding: 0 0 0 0.75rem; }
         .syarat-block ul li { margin-bottom: 0.2rem; }
 
+        /* TESTIMONIALS */
+        .testi-section { padding: 4rem 0; background: #fff; }
+        .testi-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 560px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
+        .testi-card { background: var(--off-white); border-radius: 14px; padding: 1.4rem; border: 1px solid rgba(226,232,240,0.6); display: flex; flex-direction: column; gap: 0.9rem; }
+        .testi-quote { font-family: 'Lora', serif; font-style: italic; color: #374151; font-size: 0.88rem; line-height: 1.7; margin: 0; flex: 1; }
+        .testi-quote::before { content: '\201C'; font-size: 1.3em; color: var(--primary-blue); line-height: 0; vertical-align: -0.3em; margin-right: 0.1em; }
+        .testi-quote::after { content: '\201D'; font-size: 1.3em; color: var(--primary-blue); line-height: 0; vertical-align: -0.3em; margin-left: 0.1em; }
+        .testi-name { font-size: 0.8rem; font-weight: 700; color: var(--slate-deep); }
+
         /* OBJECTIONS */
         .obj-section { background: var(--obj-bg); padding: 4rem 0; position: relative; overflow: hidden; }
-        .obj-section::before {
-            content: ''; position: absolute; bottom: -80px; right: -80px; width: 360px; height: 360px;
-            border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%); pointer-events: none;
-        }
-        .obj-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #c084fc; display: block; margin-bottom: 0.6rem; }
+        .obj-section::before { content: ''; position: absolute; bottom: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%); pointer-events: none; }
         .obj-item { border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1.5rem 0; }
         .obj-item:last-child { border-bottom: none; }
         .obj-item h3 { font-family: 'DM Sans', sans-serif; font-size: 0.97rem; font-weight: 600; color: rgba(255,255,255,0.9); margin: 0 0 0.6rem; letter-spacing: 0; }
         .obj-item p { font-size: 0.88rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.7; }
         .obj-item p strong { color: rgba(255,255,255,0.8); font-weight: 500; }
         .obj-item p .red { color: #f87171; }
-
-        /* TESTIMONIALS */
-        .testi-section { padding: 4rem 0; background: #fff; }
-
-        /* Testi grid — 2 col on md+ */
-        .testi-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        @media (min-width: 560px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
-
-        .testi-card {
-            background: var(--off-white);
-            border-radius: 14px; padding: 1.4rem;
-            border: 1px solid rgba(226,232,240,0.6);
-            display: flex; flex-direction: column; gap: 0.9rem;
-        }
-        .testi-quote {
-            font-family: 'Lora', serif; font-style: italic;
-            color: #374151; font-size: 0.88rem; line-height: 1.7; margin: 0;
-            flex: 1;
-        }
-        .testi-quote::before { content: '\201C'; font-size: 1.3em; color: var(--primary-blue); line-height: 0; vertical-align: -0.3em; margin-right: 0.1em; }
-        .testi-quote::after { content: '\201D'; font-size: 1.3em; color: var(--primary-blue); line-height: 0; vertical-align: -0.3em; margin-left: 0.1em; }
-        .testi-name { font-size: 0.8rem; font-weight: 700; color: var(--slate-deep); }
 
         /* FAQ */
         .faq-section { background: var(--light-blue); padding: 4rem 0; }
@@ -384,22 +259,20 @@
         footer span.brand { color: rgba(255,255,255,0.55); font-weight: 600; }
 
         .section-divider { height: 1px; background: linear-gradient(to right, transparent, rgba(15,76,129,0.15), transparent); }
+
+        /* reusable check SVG shortcut via a helper class */
+        .chk { fill: none; stroke: currentColor; }
     </style>
 </head>
 <body>
 
-    <!-- ══════════════════════════════════
-         NAVBAR
-    ═══════════════════════════════════ -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="navbar-inner">
-            <!-- Brand -->
             <a href="#" class="navbar-brand">
                 <div class="navbar-brand-dot"></div>
                 <span class="navbar-brand-text">Tradingsahamwith<span>Angel</span></span>
             </a>
-
-            <!-- Desktop links -->
             <ul class="navbar-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#visi-misi">Visi Misi</a></li>
@@ -407,15 +280,11 @@
                 <li><a href="https://lynk.id/tradingsahamwithangel/" target="_blank" rel="noopener">Modul Edukasi</a></li>
                 <li><a href="https://wa.me/6285710208628" target="_blank" class="nav-cta">Daftar Sekarang</a></li>
             </ul>
-
-            <!-- Mobile toggle -->
             <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
                 <svg id="iconMenu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 <svg id="iconClose" style="display:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
-
-        <!-- Mobile menu -->
         <div class="navbar-mobile" id="mobileMenu">
             <a href="#about" onclick="closeMobileMenu()">About</a>
             <a href="#visi-misi" onclick="closeMobileMenu()">Visi Misi</a>
@@ -425,9 +294,7 @@
         </div>
     </nav>
 
-    <!-- ══════════════════════════════════
-         HERO
-    ═══════════════════════════════════ -->
+    <!-- HERO -->
     <header class="hero-wrapper">
         <div class="section-container text-center">
             <span class="hero-eyebrow">TradingsahamwithAngel</span>
@@ -456,9 +323,7 @@
         </div>
     </header>
 
-    <!-- ══════════════════════════════════
-         MENTOR BIO
-    ═══════════════════════════════════ -->
+    <!-- MENTOR BIO -->
     <section id="about" class="mentor-bio-section">
         <div class="section-container text-center">
             <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-gold);display:block;margin-bottom:1.75rem;">Kenali Mentormu</span>
@@ -484,9 +349,7 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         VISI MISI
-    ═══════════════════════════════════ -->
+    <!-- VISI MISI -->
     <section id="visi-misi" class="vismis-section">
         <div class="section-container">
             <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-blue);display:block;margin-bottom:0.6rem;">Arah & Komitmen</span>
@@ -510,9 +373,7 @@
 
     <div class="section-divider"></div>
 
-    <!-- ══════════════════════════════════
-         YOUTUBE
-    ═══════════════════════════════════ -->
+    <!-- YOUTUBE -->
     <section class="youtube-section">
         <div class="section-container">
             <span class="yt-eyebrow">Lihat Sendiri</span>
@@ -525,9 +386,7 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         MEMBERSHIP
-    ═══════════════════════════════════ -->
+    <!-- MEMBERSHIP -->
     <section id="membership" class="membership-section">
         <div class="membership-container">
             <div class="membership-header">
@@ -535,9 +394,10 @@
                 <h2>Pilih Paket Membership</h2>
                 <p>Investasi pada pengetahuan memberikan bunga terbaik. Pilih paket yang sesuai kebutuhan trading dan investasi Anda.</p>
             </div>
+
             <div class="membership-grid">
 
-                <!-- REGULER -->
+                <!-- ── REGULER ── -->
                 <div class="mem-card reguler">
                     <p class="mem-tier dark">REGULER</p>
                     <p class="mem-desc">Bergabung gratis dengan membuka akun di sekuritas rekanan kami.</p>
@@ -556,14 +416,19 @@
                     </div>
                     <div class="mem-divider"></div>
                     <ul class="mem-features">
-                        <li><span class="check-icon dark"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
-                        <li><span class="check-icon dark"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
-                        <li><span class="check-icon dark"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Edukasi Basic/Intermediet Mingguan</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Template Trading Journal</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Checklist Trading Harian</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Ebook MA / Money Management</li>
+                        <li><span class="check-icon dark"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
                     </ul>
                     <a href="https://wa.me/6285710208628" target="_blank" class="mem-cta outline-dark">Daftar Reguler</a>
                 </div>
 
-                <!-- PREMIUM -->
+                <!-- ── PREMIUM ── -->
                 <div class="mem-card premium">
                     <div class="mem-badge blue">Most Popular</div>
                     <p class="mem-tier blue">PREMIUM</p>
@@ -571,22 +436,33 @@
                     <div class="mem-price-block">
                         <div class="mem-price blue">Rp 1,8jt</div>
                         <div class="mem-price-sub">/ 6 bulan &nbsp;·&nbsp; atau Rp 3jt / 12 bulan</div>
+                        <!-- Price anchoring -->
+                        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.55rem;">
+                            <span class="price-anchor blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                6 bln → Rp 9.836/hari
+                            </span>
+                            <span class="price-anchor blue-alt">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                12 bln → Rp 8.219/hari
+                            </span>
+                        </div>
                     </div>
                     <div class="mem-divider"></div>
                     <ul class="mem-features">
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Edukasi Basic/Intermediet Mingguan</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Template Trading Journal</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Checklist Trading Harian</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Ebook MA / Money Management</li>
-                        <li><span class="check-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Edukasi Basic/Intermediet Mingguan</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Template Trading Journal</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Checklist Trading Harian</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Ebook MA / Money Management</li>
+                        <li><span class="check-icon blue"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
                     </ul>
                     <a href="https://wa.me/6285710208628" target="_blank" class="mem-cta solid-blue">Daftar Premium</a>
                 </div>
 
-                <!-- AJAIB -->
+                <!-- ── AJAIB ── -->
                 <div class="mem-card ajaib">
                     <div class="mem-badge teal">Spesial</div>
                     <p class="mem-tier teal">AJAIB</p>
@@ -605,19 +481,23 @@
                     </div>
                     <div class="mem-divider"></div>
                     <ul class="mem-features">
-                        <li><span class="check-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian</li>
-                        <li><span class="check-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
-                        <li><span class="check-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Komunitas Positif Ajaib</li>
-                        <li><span class="check-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Edukasi Basic/Intermediet Mingguan</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Template Trading Journal</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Checklist Trading Harian</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Ebook MA / Money Management</li>
+                        <li><span class="check-icon teal"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
                     </ul>
                     <a href="https://wa.me/6285710208628" target="_blank" class="mem-cta solid-teal">Daftar via Ajaib</a>
                 </div>
 
-                <!-- VIP -->
+                <!-- ── VIP ── -->
                 <div class="mem-card vip">
                     <div class="mem-badge gold">VIP</div>
-                    <p class="mem-tier gold">VIP</p>
-                    <p class="mem-desc">Layanan premium untuk high-net-worth traders dengan portofolio besar.</p>
+                    <p class="mem-tier gold">Prime Circle</p>
+                    <p class="mem-desc">Layanan premium untuk high-net-worth trader & investor.</p>
                     <div class="syarat-block">
                         <span class="syarat-label">Syarat</span>
                         <ul>
@@ -629,12 +509,17 @@
                     </div>
                     <div class="mem-divider"></div>
                     <ul class="mem-features">
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Semua benefit Premium</li>
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Sesi Special Portofolio Clinic</li>
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Fee Transaksi Lebih Murah (Negotiable)</li>
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Seat Priority Offline Class</li>
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
-                        <li><span class="check-icon gold"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Trading Journal & Checklist</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Watchlist Saham Harian (Scalping, Swing)</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Edukasi Basic/Intermediet Mingguan</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Kelas Live Trading Harian</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Alert Saham Momentum</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Template Trading Journal</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Checklist Trading Harian</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Ebook MA / Money Management</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Grup WA Eksklusif</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Sesi Special Portofolio Clinic</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Fee Transaksi Lebih Murah (Negotiable)</li>
+                        <li><span class="check-icon gold"><svg class="chk" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>Seat Priority Offline Class</li>
                     </ul>
                     <a href="https://wa.me/6285710208628" target="_blank" class="mem-cta solid-gold">Apply VIP</a>
                 </div>
@@ -643,12 +528,59 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         OBJECTIONS
-    ═══════════════════════════════════ -->
+    <!-- TESTIMONIALS — now before objections -->
+    <section id="testimoni" class="testi-section">
+        <div class="section-container">
+            <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-blue);display:block;margin-bottom:0.6rem;">Kata Member</span>
+            <h2 style="font-size:1.65rem;margin-bottom:1.75rem;">Mereka Juga Pernah di Posisi Anda</h2>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <p class="testi-quote">Saya baru pertama kali mengikuti zoom meeting Ci Angel dan terasa banget profesionalnya sebagai pengajar. Diajarin step by step, ditanyain paham atau nggak. Kemarin belajar mandiri 2 minggu via TikTok dan YouTube — kepala panas nggak karuan. Pas ikut ini pikiran tenang, karena pembawaannya santai jadi ilmunya enak diserap.</p>
+                    <div class="testi-name">Sri Auliawati</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Benar-benar daging semua ilmunya, amat bermanfaat, pembahasannya komprehensif disertai contoh-contoh. Terima kasih banyak Bu Angel!</p>
+                    <div class="testi-name">Bambang Subijanto</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Sebagai pemula saya merasa terbantu dengan adanya bootcamp ini. Saya jadi bisa mulai belajar mengatur dan merencanakan sebelum membeli suatu saham.</p>
+                    <div class="testi-name">Eddy Resmiyarto Caesarino</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Cukup mudah untuk dimengerti materinya dan seperti sharing, jadi cukup friendly mentornya. Terima kasih ilmunya Ci, makin sukses selalu!</p>
+                    <div class="testi-name">Lily Chrisnawati</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Akar sampai buah dibahas semua — mulai dari pengertian dasar saham, portofolio manajemen, money management, hingga risiko kerugian. Inti dari Bootcamp ini: disiplin adalah kunci.</p>
+                    <div class="testi-name">Yovie Angga</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Sangat newbie friendly materi yang diberikan, jadi cocok untuk para pemula yang mau belajar. Sukses terus Ci!</p>
+                    <div class="testi-name">Michelle</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Sangat bagus — pemaparan terstruktur dan gaya bahasa untuk menjelaskannya sangat tertata dan mudah dipahami. Good Luck Miss Angel, emang T.O.P!</p>
+                    <div class="testi-name">Deri Asfahani</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Beruntung bisa masuk grup Ci Angel, karena jika ikuti ilmunya dan terapkan, itu bener-bener cuan.</p>
+                    <div class="testi-name">Noni</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Materi oke, penjelasan oke, ada study case dan diajari cara screening sahamnya. Ci Angel memprioritaskan mindset dan edukasi agar client dapat mandiri dalam membuat trading plan.</p>
+                    <div class="testi-name">Suprianto</div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-quote">Tak ada kata-kata yang bisa diucapkan untuk setiap bootcamp Ci Angel yang pernah saya ikuti selain: SUPER LUAR BIASA! Terima kasih banyak atas segala ilmunya.</p>
+                    <div class="testi-name">Apin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJECTIONS — now after testimonials, eyebrow removed -->
     <section class="obj-section">
         <div class="section-container">
-            <span class="obj-eyebrow">Keberatan yang Wajar</span>
             <h2 style="font-size:1.65rem;color:#fff;margin-bottom:2rem;line-height:1.3;">Hal-Hal yang Mungkin Anda Pertanyakan</h2>
             <div class="obj-item">
                 <h3>Pengajarnya kompeten, atau cuma oknum flexing profit?</h3>
@@ -673,75 +605,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         TESTIMONIALS
-    ═══════════════════════════════════ -->
-    <section id="testimoni" class="testi-section">
-        <div class="section-container">
-            <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-blue);display:block;margin-bottom:0.6rem;">Kata Member</span>
-            <h2 style="font-size:1.65rem;margin-bottom:1.75rem;">Mereka Juga Pernah di Posisi Anda</h2>
-
-            <div class="testi-grid">
-
-                <div class="testi-card">
-                    <p class="testi-quote">Saya baru pertama kali mengikuti zoom meeting Ci Angel dan terasa banget profesionalnya sebagai pengajar. Diajarin step by step, ditanyain paham atau nggak. Kemarin belajar mandiri 2 minggu via TikTok dan YouTube — kepala panas nggak karuan. Pas ikut ini pikiran tenang, karena pembawaannya santai jadi ilmunya enak diserap.</p>
-                    <div class="testi-name">Sri Auliawati</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Benar-benar daging semua ilmunya, amat bermanfaat, pembahasannya komprehensif disertai contoh-contoh. Terima kasih banyak Bu Angel!</p>
-                    <div class="testi-name">Bambang Subijanto</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Sebagai pemula saya merasa terbantu dengan adanya bootcamp ini. Saya jadi bisa mulai belajar mengatur dan merencanakan sebelum membeli suatu saham.</p>
-                    <div class="testi-name">Eddy Resmiyarto Caesarino</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Cukup mudah untuk dimengerti materinya dan seperti sharing, jadi cukup friendly mentornya. Terima kasih ilmunya Ci, makin sukses selalu!</p>
-                    <div class="testi-name">Lily Chrisnawati</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Akar sampai buah dibahas semua — mulai dari pengertian dasar saham, portofolio manajemen, money management, hingga risiko kerugian. Inti dari Bootcamp ini: disiplin adalah kunci.</p>
-                    <div class="testi-name">Yovie Angga</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Sangat newbie friendly materi yang diberikan, jadi cocok untuk para pemula yang mau belajar. Sukses terus Ci!</p>
-                    <div class="testi-name">Michelle</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Sangat bagus — pemaparan terstruktur dan gaya bahasa untuk menjelaskannya sangat tertata dan mudah dipahami. Good Luck Miss Angel, emang T.O.P!</p>
-                    <div class="testi-name">Deri Asfahani</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Beruntung bisa masuk grup Ci Angel, karena jika ikuti ilmunya dan terapkan, itu bener-bener cuan.</p>
-                    <div class="testi-name">Noni</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Materi oke, penjelasan oke, ada study case dan diajari cara screening sahamnya. Ci Angel memprioritaskan mindset dan edukasi agar client dapat mandiri dalam membuat trading plan.</p>
-                    <div class="testi-name">Suprianto</div>
-                </div>
-
-                <div class="testi-card">
-                    <p class="testi-quote">Tak ada kata-kata yang bisa diucapkan untuk setiap bootcamp Ci Angel yang pernah saya ikuti selain: SUPER LUAR BIASA! Terima kasih banyak atas segala ilmunya.</p>
-                    <div class="testi-name">Apin</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <div class="section-divider"></div>
 
-    <!-- ══════════════════════════════════
-         FAQ
-    ═══════════════════════════════════ -->
+    <!-- FAQ -->
     <section id="tanya" class="faq-section">
         <div class="section-container">
             <h2 style="font-size:1.65rem;color:var(--primary-blue);margin-bottom:1.75rem;text-align:center;">Pertanyaan Umum</h2>
@@ -764,14 +630,12 @@
                     <span>Metode pembayaran apa yang tersedia?</span>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div class="faq-content"><p>Transfer Bank, E-Wallet, atau Kartu Kredit — semua dikonfirmasi melalui WhatsApp.</p></div>
+                <div class="faq-content"><p>Transfer Bank BCA — dikonfirmasi melalui WhatsApp.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════ -->
+    <!-- FOOTER -->
     <footer>
         <div class="section-container">
             <p><span class="brand">TradingsahamwithAngel</span> &copy; 2026</p>
@@ -780,7 +644,6 @@
     </footer>
 
     <script>
-        // FAQ accordion
         function toggleFaq(btn) {
             const content = btn.nextElementSibling;
             const icon = btn.querySelector('svg');
@@ -790,7 +653,6 @@
             if (!isOpen) { content.classList.add('active'); icon.classList.add('open'); }
         }
 
-        // Navbar mobile toggle
         const navToggle = document.getElementById('navToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const iconMenu = document.getElementById('iconMenu');
@@ -808,7 +670,6 @@
             iconClose.style.display = 'none';
         }
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
