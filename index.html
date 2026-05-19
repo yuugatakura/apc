@@ -100,27 +100,23 @@
             border-radius: 12px;
             padding: 0.85rem 1.1rem;
             margin: 0 auto 2.5rem;
-            max-width: 460px;
+            max-width: 480px;
             justify-content: center;
         }
-        .mentor-avatar {
+        .mentor-avatar-hero {
             width: 46px;
             height: 46px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--mid-blue), var(--primary-blue));
+            overflow: hidden;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Lora', serif;
-            font-size: 1.15rem;
-            color: #fff;
-            font-weight: 600;
-            border: 2px solid rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.2);
         }
-        .mentor-text {
-            text-align: left;
+        .mentor-avatar-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
+        .mentor-text { text-align: left; }
         .mentor-text strong {
             display: block;
             font-size: 0.82rem;
@@ -161,7 +157,6 @@
             position: absolute;
             bottom: 0; left: 1.5rem; right: 1.5rem;
             background: linear-gradient(to top, rgba(26,35,50,0.92) 30%, transparent);
-            border-radius: 0 0 0 0;
             padding: 2rem 1.5rem 1.25rem;
         }
         .hero-image-caption {
@@ -192,23 +187,9 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 28px rgba(15,76,129,0.45);
         }
-        .btn-cta-ghost {
-            background: transparent;
-            border: 1.5px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.75) !important;
-        }
-        .btn-cta-ghost:hover {
-            border-color: rgba(255,255,255,0.5);
-            color: #fff !important;
-            background: transparent;
-            box-shadow: none;
-        }
 
         /* ── ENEMY SECTION ── */
-        .enemy-section {
-            background: #fff;
-            padding: 3.5rem 0;
-        }
+        .enemy-section { background: #fff; padding: 3.5rem 0; }
         .enemy-label {
             font-family: 'DM Sans', sans-serif;
             font-size: 0.72rem;
@@ -231,11 +212,195 @@
         .pain-item strong { color: #c53030; font-weight: 600; }
         .pain-item p { color: #4a5568; font-size: 0.94rem; margin: 0; }
 
-        /* ── PROMISE SECTION ── */
-        .promise-section {
-            padding: 4rem 0;
-            background: var(--off-white);
+        /* ── MENTOR BIO (Fortis-inspired) ── */
+        .mentor-bio-section {
+            background: var(--slate-deep);
+            padding: 4.5rem 0;
+            position: relative;
+            overflow: hidden;
         }
+        .mentor-bio-section::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 360px; height: 360px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15,76,129,0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .mentor-photo-wrapper {
+            position: relative;
+            margin: 0 auto 2rem;
+            width: 160px;
+            height: 160px;
+        }
+        .mentor-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid rgba(201,148,58,0.5);
+        }
+        .mentor-photo-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(201,148,58,0.2);
+        }
+        .mentor-name-tag {
+            font-family: 'Lora', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.2rem;
+        }
+        .mentor-title-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .mentor-bio-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        /* Stats row */
+        .mentor-stats {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .mentor-stat {
+            flex: 1;
+            padding: 1.25rem 0.75rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+        .mentor-stat:last-child { border-right: none; }
+        .mentor-stat-num {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .mentor-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.3;
+        }
+        /* License badges */
+        .license-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .license-pill {
+            background: rgba(15,76,129,0.35);
+            border: 1px solid rgba(15,76,129,0.5);
+            color: #8FB8DA;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── VISION MISSION (Fortis-inspired) ── */
+        .vismis-section {
+            background: #fff;
+            padding: 4.5rem 0;
+        }
+        .vismis-card {
+            background: var(--off-white);
+            border-radius: 18px;
+            padding: 2rem 1.75rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(226,232,240,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        .vismis-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px;
+            height: 100%;
+        }
+        .vismis-card.visi::before { background: var(--accent-gold); }
+        .vismis-card.misi::before { background: var(--primary-blue); }
+        .vismis-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .vismis-label.visi { color: var(--accent-gold); }
+        .vismis-label.misi { color: var(--primary-blue); }
+        .vismis-text {
+            font-family: 'Lora', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--slate-deep);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ── YOUTUBE SECTION ── */
+        .youtube-section {
+            background: var(--slate-deep);
+            padding: 4.5rem 0;
+        }
+        .yt-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+        .yt-embed-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-top: 1.75rem;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+        .yt-embed-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .yt-caption {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* ── PROMISE SECTION ── */
+        .promise-section { padding: 4rem 0; background: var(--off-white); }
         .promise-section blockquote {
             font-family: 'Lora', serif;
             font-size: 1.45rem;
@@ -266,64 +431,35 @@
             transform: translateY(-2px);
         }
         .fab-icon {
-            width: 44px;
-            height: 44px;
+            width: 44px; height: 44px;
             background: var(--light-blue);
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
         }
         .fab-icon svg { width: 22px; height: 22px; color: var(--primary-blue); }
         .fab-body h3 {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1rem; font-weight: 600;
             font-family: 'DM Sans', sans-serif;
-            color: var(--slate-deep);
-            margin: 0 0 0.25rem;
-            letter-spacing: 0;
+            color: var(--slate-deep); margin: 0 0 0.25rem; letter-spacing: 0;
         }
         .fab-body .fab-tag {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 0.6rem;
-            display: block;
+            font-size: 0.68rem; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent-gold); margin-bottom: 0.6rem; display: block;
         }
-        .fab-body p {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin: 0;
-            line-height: 1.6;
-        }
+        .fab-body p { font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.6; }
 
-        /* ── OBJECTIONS SECTION ── */
-        .obj-section {
-            background: var(--slate-deep);
-            padding: 4rem 0;
-        }
-        .obj-item {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding: 1.5rem 0;
-        }
+        /* ── OBJECTIONS ── */
+        .obj-section { background: var(--slate-deep); padding: 4rem 0; }
+        .obj-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0; }
         .obj-item:last-child { border-bottom: none; }
         .obj-item h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.97rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.9);
-            margin: 0 0 0.6rem;
-            letter-spacing: 0;
+            font-size: 0.97rem; font-weight: 600;
+            color: rgba(255,255,255,0.9); margin: 0 0 0.6rem; letter-spacing: 0;
         }
-        .obj-item p {
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.5);
-            margin: 0;
-            line-height: 1.7;
-        }
+        .obj-item p { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.7; }
         .obj-item p strong { color: rgba(255,255,255,0.82); font-weight: 500; }
         .obj-item p .red { color: #fc8181; }
 
@@ -331,27 +467,19 @@
         .testi-section { padding: 4rem 0; background: #fff; }
         .testi-card {
             background: var(--off-white);
-            border-radius: 14px;
-            padding: 1.6rem;
-            margin-bottom: 1.1rem;
+            border-radius: 14px; padding: 1.6rem; margin-bottom: 1.1rem;
             border: 1px solid rgba(226,232,240,0.6);
         }
         .testi-card p {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            color: #374151;
-            font-size: 0.96rem;
-            margin: 0 0 1.1rem;
-            line-height: 1.7;
+            font-family: 'Lora', serif; font-style: italic;
+            color: #374151; font-size: 0.96rem; margin: 0 0 1.1rem; line-height: 1.7;
         }
         .testi-meta { display: flex; align-items: center; gap: 0.75rem; }
         .testi-avatar {
-            width: 36px; height: 36px;
-            border-radius: 50%;
+            width: 36px; height: 36px; border-radius: 50%;
             background: var(--light-blue);
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 0.85rem; color: var(--primary-blue);
-            flex-shrink: 0;
+            font-weight: 700; font-size: 0.85rem; color: var(--primary-blue); flex-shrink: 0;
         }
         .testi-name { font-size: 0.83rem; font-weight: 600; color: var(--slate-deep); }
         .testi-role { font-size: 0.75rem; color: #94a3b8; }
@@ -359,108 +487,52 @@
         /* ── FAQ ── */
         .faq-section { background: var(--light-blue); padding: 4rem 0; }
         .faq-item {
-            background: #fff;
-            border-radius: 10px;
-            margin-bottom: 0.75rem;
-            border: 1px solid rgba(226,232,240,0.7);
-            overflow: hidden;
+            background: #fff; border-radius: 10px; margin-bottom: 0.75rem;
+            border: 1px solid rgba(226,232,240,0.7); overflow: hidden;
         }
         .faq-btn {
-            width: 100%;
-            text-align: left;
-            padding: 1.1rem 1.25rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.93rem;
-            font-weight: 600;
-            color: var(--slate-deep);
+            width: 100%; text-align: left; padding: 1.1rem 1.25rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: none; border: none; cursor: pointer;
+            font-family: 'DM Sans', sans-serif; font-size: 0.93rem;
+            font-weight: 600; color: var(--slate-deep);
         }
         .faq-btn svg { width: 18px; height: 18px; color: #94a3b8; flex-shrink: 0; transition: transform 0.3s; }
         .faq-btn svg.open { transform: rotate(180deg); }
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-content.active { max-height: 400px; }
-        .faq-content p {
-            padding: 0 1.25rem 1.1rem;
-            color: #64748b;
-            font-size: 0.88rem;
-            margin: 0;
-            line-height: 1.7;
-        }
+        .faq-content p { padding: 0 1.25rem 1.1rem; color: #64748b; font-size: 0.88rem; margin: 0; line-height: 1.7; }
 
         /* ── PRICING ── */
         .pricing-section { padding: 5rem 0; background: var(--off-white); }
         .pricing-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
+            background: #fff; border-radius: 20px; padding: 2.5rem 2rem;
             border: 2px solid var(--primary-blue);
-            box-shadow: 0 8px 40px rgba(15,76,129,0.12);
-            text-align: center;
+            box-shadow: 0 8px 40px rgba(15,76,129,0.12); text-align: center;
         }
         .scarcity-badge {
-            display: inline-block;
-            background: #fff5e0;
-            border: 1px solid #f6c57f;
-            color: #92400e;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.3rem 0.9rem;
-            border-radius: 2px;
-            margin-bottom: 1.75rem;
+            display: inline-block; background: #fff5e0;
+            border: 1px solid #f6c57f; color: #92400e;
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; padding: 0.3rem 0.9rem;
+            border-radius: 2px; margin-bottom: 1.75rem;
         }
-        .price-old {
-            color: #94a3b8;
-            text-decoration: line-through;
-            font-size: 1rem;
-        }
+        .price-old { color: #94a3b8; text-decoration: line-through; font-size: 1rem; }
         .price-main {
             font-family: 'Lora', serif;
             font-size: clamp(2.5rem, 8vw, 3.5rem);
-            font-weight: 700;
-            color: var(--primary-blue);
-            line-height: 1;
-            margin: 0.3rem 0;
+            font-weight: 700; color: var(--primary-blue); line-height: 1; margin: 0.3rem 0;
         }
-        .price-save {
-            font-size: 0.82rem;
-            color: #16a34a;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
+        .price-save { font-size: 0.82rem; color: #16a34a; font-weight: 600; margin-bottom: 2rem; }
         .trust-strip {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.25rem;
-            flex-wrap: wrap;
+            display: flex; align-items: center; justify-content: center;
+            gap: 1.5rem; margin-top: 1.25rem; flex-wrap: wrap;
         }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
+        .trust-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: #94a3b8; }
         .trust-item svg { width: 13px; height: 13px; }
 
         /* ── FOOTER ── */
-        footer {
-            background: var(--slate-deep);
-            padding: 2.5rem 0;
-            text-align: center;
-        }
+        footer { background: var(--slate-deep); padding: 2.5rem 0; text-align: center; }
         footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; margin: 0 0 0.4rem; }
         footer p:last-child { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
         footer span.brand { color: rgba(255,255,255,0.55); font-weight: 600; }
@@ -469,35 +541,35 @@
         .section-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(15,76,129,0.15), transparent);
-            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ══════════════════════════════════
          HERO
-    ══════════════════════════════════════════════ -->
+    ═══════════════════════════════════ -->
     <header class="hero-wrapper">
         <div class="section-container text-center">
 
             <span class="hero-eyebrow">Angel Prime Circle</span>
 
             <h1 class="hero-headline">
-                Pasar Saham Penuh Jebakan.<br>
-                <em>Jangan Jadi Mangsanya.</em>
+                Belajar Investasi dan Bertumbuh Bersama<br>
+                <em>Angel Prime Circle</em>
             </h1>
 
             <p class="hero-subhead">
-                Investor pemula yang tidak terdidik selalu kalah — bukan karena bodoh, tapi karena <strong>tidak ada yang mengajari cara bertahan.</strong> Kelas ini mengubah itu.
+                Dapatkan edukasi saham mulai dari pemula hingga intermediet, live trading online, pantauan saham potensial, informasi dan data terupdate serta <strong>komunitas positif untuk meningkatkan pertumbuhan portofolio.</strong>
             </p>
 
-            <!-- Mentor Strip -->
             <div class="mentor-strip">
-                <div class="mentor-avatar">A</div>
+                <div class="mentor-avatar-hero">
+                    <img src="https://cdn.scalev.id/uploads/1779168512/ya49Ett7LjH-q6A6HDIDLA/1779168512705-IMG-20260519-WA0024.webp" alt="Angelica Jonatan">
+                </div>
                 <div class="mentor-text">
-                    <strong>Dipandu oleh Mentor Berpengalaman</strong>
-                    <span>Mantan Head Edukator · Mirae Asset Sekuritas</span>
+                    <strong>Angelica Jonatan</strong>
+                    <span>Senior Investment Specialist · Penasihat Investasi Berlisensi OJK</span>
                 </div>
                 <div class="mentor-badge">Verified</div>
             </div>
@@ -509,18 +581,120 @@
 
         </div>
 
-        <!-- Hero image -->
         <div class="hero-image-area">
-            <img src="https://placehold.co/700x360/0B3D69/4A90C4?text=Sesi+Edukasi+Langsung" alt="Sesi edukasi Angel Prime Circle">
+            <img src="https://cdn.scalev.id/uploads/1779169997/11LwtqSuu6-t_vNxCHq1mA/1779169997956-IMG-20260519-WA0027.webp" alt="Komunitas Aktif">
             <div class="hero-image-overlay">
-                <p class="hero-image-caption">Suasana sesi diskusi nyata — bukan stock photo keuangan generik.</p>
+                <p class="hero-image-caption">Suasana Live Class</p>
             </div>
         </div>
     </header>
 
-    <!-- ═══════════════════════════════════════════
-         PROBLEM / ENEMY SECTION
-    ══════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════
+         MENTOR BIO — Angelica Jonatan
+    ═══════════════════════════════════ -->
+    <section class="mentor-bio-section">
+        <div class="section-container text-center">
+
+            <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-gold); display:block; margin-bottom:1.75rem;">Kenali Mentormu</span>
+
+            <div class="mentor-photo-wrapper">
+                <img src="https://cdn.scalev.id/uploads/1779168512/ya49Ett7LjH-q6A6HDIDLA/1779168512705-IMG-20260519-WA0024.webp" alt="Angelica Jonatan">
+                <div class="mentor-photo-ring"></div>
+            </div>
+
+            <h2 class="mentor-name-tag">Angelica Jonatan</h2>
+            <p class="mentor-title-tag">Senior Investment Specialist</p>
+
+            <p class="mentor-bio-text">
+                Mengawali karir profesional di dunia perbankan hingga dipercaya menjadi <strong style="color:rgba(255,255,255,0.82);">Senior Investment Specialist</strong> di salah satu sekuritas terbesar di Indonesia. Selama berkarir, telah menangani dan mengedukasi lebih dari <strong style="color:rgba(255,255,255,0.82);">3.000 klien</strong> — dari pemula hingga investor berpengalaman.
+            </p>
+
+            <!-- Stats -->
+            <div class="mentor-stats">
+                <div class="mentor-stat">
+                    <div class="mentor-stat-num">3.000+</div>
+                    <div class="mentor-stat-label">Klien Diedukasi</div>
+                </div>
+                <div class="mentor-stat">
+                    <div class="mentor-stat-num">6</div>
+                    <div class="mentor-stat-label">Lisensi & Sertifikasi Resmi</div>
+                </div>
+                <div class="mentor-stat">
+                    <div class="mentor-stat-num">OJK</div>
+                    <div class="mentor-stat-label">Teregulasi & Terverifikasi</div>
+                </div>
+            </div>
+
+            <!-- License badges -->
+            <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.75rem;">Lisensi & Sertifikasi Resmi OJK</p>
+            <div class="license-row">
+                <span class="license-pill">WPPE</span>
+                <span class="license-pill">WMI</span>
+                <span class="license-pill">AWP</span>
+                <span class="license-pill">CTA</span>
+                <span class="license-pill">CSA</span>
+                <span class="license-pill">ToT Instructor Level 4</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         VISI & MISI
+    ═══════════════════════════════════ -->
+    <section class="vismis-section">
+        <div class="section-container">
+
+            <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary-blue); display:block; margin-bottom:0.6rem;">Arah & Komitmen</span>
+            <h2 style="font-size:1.65rem; margin-bottom:2rem; line-height:1.3;">Visi & Misi Angel Prime Circle</h2>
+
+            <div class="vismis-card visi">
+                <div class="vismis-label visi">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    Visi
+                </div>
+                <p class="vismis-text">"Membantu member menjadi trader dan investor yang mandiri, paham pasar modal, serta mampu membangun konsistensi dan kemapanan finansial melalui trading dan investasi."</p>
+            </div>
+
+            <div class="vismis-card misi">
+                <div class="vismis-label misi">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Misi
+                </div>
+                <p class="vismis-text">"Memberikan edukasi pasar modal yang simple, praktis, dan mudah dipahami agar setiap member dapat mengambil keputusan trading dan investasi dengan lebih percaya diri, terukur, dan bertanggung jawab, serta membangun komunitas positif untuk bertumbuh, belajar, dan mendapatkan informasi pasar secara bersama."</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════
+         YOUTUBE
+    ═══════════════════════════════════ -->
+    <section class="youtube-section">
+        <div class="section-container">
+
+            <span class="yt-eyebrow">Lihat Sendiri</span>
+            <h2 style="font-size:1.65rem; color:#fff; line-height:1.3; margin-bottom:0.5rem;">Cara Kami Mengajar Berbeda</h2>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.5); margin:0;">Tonton sesi edukasi langsung — sebelum Anda memutuskan bergabung.</p>
+
+            <div class="yt-embed-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/meKeCZk_f-g?si=HJZ6iz0-sWjeF_Wc"
+                    title="Angel Prime Circle — Sesi Edukasi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="yt-caption">Sesi edukasi live oleh Angelica Jonatan · Angel Prime Circle</p>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         PROBLEM / ENEMY
+    ═══════════════════════════════════ -->
     <section class="enemy-section">
         <div class="section-container">
 
@@ -547,9 +721,9 @@
 
     <div class="section-divider"></div>
 
-    <!-- ═══════════════════════════════════════════
-         PROMISE / TRANSFORMATION
-    ══════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════
+         PROMISE
+    ═══════════════════════════════════ -->
     <section class="promise-section">
         <div class="section-container">
 
@@ -569,16 +743,15 @@
 
     <div class="section-divider"></div>
 
-    <!-- ═══════════════════════════════════════════
-         FAB — WHAT YOU ACTUALLY LEARN
-    ══════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════
+         FAB — WHAT YOU GET
+    ═══════════════════════════════════ -->
     <section class="fab-section" style="background: var(--off-white);">
         <div class="section-container">
 
             <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary-blue); display:block; margin-bottom:0.6rem;">Yang Anda Dapatkan</span>
             <h2 style="font-size:1.65rem; margin-bottom:2rem; line-height:1.3;">Empat Hal yang Mengubah Cara Anda Melihat Pasar</h2>
 
-            <!-- FAB 1 -->
             <div class="fab-card">
                 <div class="fab-icon">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
@@ -586,11 +759,10 @@
                 <div class="fab-body">
                     <span class="fab-tag">Bahasa yang Manusiawi</span>
                     <h3>Pasar Bisa Dipahami Siapa Saja</h3>
-                    <p>PE Ratio, MACD, Support-Resistance — semua dijelaskan dengan analogi kehidupan sehari-hari. Bukan karena Anda tidak mampu belajar hal kompleks, tapi karena kompleksitas yang tidak perlu adalah tanda pengajar yang buruk.</p>
+                    <p>PE Ratio, MACD, Support-Resistance — semua dijelaskan dengan analogi kehidupan sehari-hari. Kompleksitas yang tidak perlu adalah tanda pengajar yang buruk.</p>
                 </div>
             </div>
 
-            <!-- FAB 2 -->
             <div class="fab-card">
                 <div class="fab-icon">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -598,11 +770,10 @@
                 <div class="fab-body">
                     <span class="fab-tag">Prioritas Utama</span>
                     <h3>Lindungi Modal Dulu, Baru Bicara Profit</h3>
-                    <p>Sebagian besar investor rugi bukan karena strategi salah, tapi karena tidak punya batas risiko yang jelas. Anda akan belajar menetapkan batasan itu sebelum menyentuh satu pun saham.</p>
+                    <p>Sebagian besar investor rugi karena tidak punya batas risiko yang jelas. Anda akan menetapkan batasan itu sebelum menyentuh satu pun saham.</p>
                 </div>
             </div>
 
-            <!-- FAB 3 -->
             <div class="fab-card">
                 <div class="fab-icon">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
@@ -610,11 +781,10 @@
                 <div class="fab-body">
                     <span class="fab-tag">Imunitas Mental</span>
                     <h3>Berita Pasar Tidak Akan Mengendalikan Anda</h3>
-                    <p>Anda akan bisa membedakan mana berita yang hanya menciptakan kepanikan sesaat dan mana yang benar-benar berdampak. Ini tameng psikologis yang paling underrated di dunia investasi.</p>
+                    <p>Anda bisa membedakan berita yang hanya menciptakan kepanikan sesaat dari yang benar-benar berdampak. Tameng psikologis paling underrated di dunia investasi.</p>
                 </div>
             </div>
 
-            <!-- FAB 4 -->
             <div class="fab-card">
                 <div class="fab-icon">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -622,16 +792,16 @@
                 <div class="fab-body">
                     <span class="fab-tag">Ekosistem Pasca-Kelas</span>
                     <h3>Anda Tidak Ditinggalkan Setelah Bayar</h3>
-                    <p>Akses ke komunitas alumni yang sehat — tempat Anda bisa menguji analisis, bertanya tanpa dihakimi, dan terus berkembang di luar kelas. Mentor tetap terlibat.</p>
+                    <p>Akses komunitas alumni aktif — tempat menguji analisis, bertanya tanpa dihakimi, dan berkembang terus di luar kelas. Mentor tetap terlibat.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         OBJECTION HANDLING
-    ══════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════
+         OBJECTIONS
+    ═══════════════════════════════════ -->
     <section class="obj-section">
         <div class="section-container">
 
@@ -640,31 +810,31 @@
 
             <div class="obj-item">
                 <h3>Pengajarnya kompeten, atau cuma oknum flexing profit?</h3>
-                <p>Edukasi ini dipandu <strong>mantan Head Edukator Mirae Asset</strong> — sekuritas No. 3 di Indonesia. Standar pengajaran berbasis kepatuhan institusional, bukan rekayasa screenshot. Nama, rekam jejak, dan latar belakang dapat diverifikasi.</p>
+                <p>Edukasi ini dipandu <strong>Angelica Jonatan</strong> — Senior Investment Specialist berlisensi OJK dengan sertifikasi WPPE, WMI, AWP, CTA, CSA, dan ToT Instructor Level 4. Rekam jejak dapat diverifikasi, bukan rekayasa screenshot.</p>
             </div>
             <div class="obj-item">
                 <h3>Saya buta total soal saham. Akan terlalu rumit?</h3>
-                <p>Dirancang khusus untuk orang yang belum pernah menyentuh aplikasi saham. Setiap modul dimulai dari nol, dengan analogi kehidupan nyata — bukan dari asumsi bahwa Anda sudah tahu apa-apa.</p>
+                <p>Dirancang khusus untuk yang belum pernah menyentuh aplikasi saham. Setiap modul dimulai dari nol, dengan analogi kehidupan nyata.</p>
             </div>
             <div class="obj-item">
                 <h3>Modal saya kecil. Apakah saham hanya untuk orang kaya?</h3>
-                <p>Di bursa Indonesia Anda bisa mulai dari nominal yang sangat terjangkau. Fokus kelas ini bukan besarnya modal, tapi <strong>cara menjaga modal agar tidak habis karena keputusan yang tidak terinformasi.</strong></p>
+                <p>Di bursa Indonesia Anda bisa mulai dari nominal sangat terjangkau. Fokusnya bukan besarnya modal, tapi <strong>cara menjaga modal agar tidak habis karena keputusan yang tidak terinformasi.</strong></p>
             </div>
             <div class="obj-item">
                 <h3>Setelah kelas selesai, apakah saya dilepas begitu saja?</h3>
-                <p>Tidak. Anda mendapat akses ke ekosistem alumni dengan sesi simulasi dan ruang diskusi aktif. Mentor tetap hadir — bukan hilang setelah pembayaran diterima.</p>
+                <p>Tidak. Anda mendapat akses ekosistem alumni dengan sesi simulasi dan ruang diskusi aktif. Mentor tetap hadir.</p>
             </div>
             <div class="obj-item">
                 <h3>Apakah ada jaminan saya pasti kaya?</h3>
-                <p><span class="red">Tidak ada, dan siapa pun yang menjanjikannya sedang membohongi Anda.</span> Yang kami janjikan: <strong>Anda akan paham cara kerja pasar, cara melindungi modal, dan cara berpikir mandiri</strong> — sehingga Anda tidak lagi menjadi mangsa siapa pun.</p>
+                <p><span class="red">Tidak ada, dan siapa pun yang menjanjikannya sedang membohongi Anda.</span> Yang kami jamin: <strong>Anda akan paham cara kerja pasar, cara melindungi modal, dan cara berpikir mandiri</strong> — sehingga Anda tidak lagi menjadi mangsa siapa pun.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ══════════════════════════════════
          TESTIMONIALS
-    ══════════════════════════════════════════════ -->
+    ═══════════════════════════════════ -->
     <section class="testi-section">
         <div class="section-container">
 
@@ -709,9 +879,9 @@
 
     <div class="section-divider"></div>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ══════════════════════════════════
          FAQ
-    ══════════════════════════════════════════════ -->
+    ═══════════════════════════════════ -->
     <section class="faq-section">
         <div class="section-container">
 
@@ -750,9 +920,9 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         PRICING / CONVERSION
-    ══════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════
+         PRICING
+    ═══════════════════════════════════ -->
     <section class="pricing-section">
         <div class="section-container">
 
@@ -777,7 +947,7 @@
                     </span>
                     <span class="trust-item">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Edukasi Berbasis Regulasi
+                        Edukasi Berlisensi OJK
                     </span>
                     <span class="trust-item">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -789,9 +959,9 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ══════════════════════════════════
          FOOTER
-    ══════════════════════════════════════════════ -->
+    ═══════════════════════════════════ -->
     <footer>
         <div class="section-container">
             <p><span class="brand">Angel Prime Circle</span> &copy; 2026</p>
